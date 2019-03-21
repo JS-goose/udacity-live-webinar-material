@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(45deg,rgb(243, 241, 241), rgba(0, 163, 235, 0.6), rgb(0, 153, 255)) center / cover no-repeat;
+}
+
+#nav-container {
+    display: flex;
+    border: 3px solid mistyrose;
+}
+
+#nav-link-list, #social-link-list {
+    list-style: none;
+}
+
+#nav-link-list li, #social-link-list li {
+    border: 1px solid orange;
+}
