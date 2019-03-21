@@ -12,13 +12,10 @@ html {
 }
 
 .box {
-  height: 200px;
-  width: 300px;
   border: 1px solid black;
   color: white;
   font-size: 1.5em;
   font-weight: 900;
-  padding: 10px 0 0 10px;
 }
 
 .one {
@@ -58,5 +55,5 @@ html {
 }
 
 .ten {
-  background-color: rgb(219, 217, 212);
+  background-color: rgb(145, 58, 58);
 }
