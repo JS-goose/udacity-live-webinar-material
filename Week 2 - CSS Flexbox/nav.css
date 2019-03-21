@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: space-around;
     border: 3px solid mistyrose;
+    background-color: rgba(0, 0, 0, 0.3)
 }
 
 #nav-link-list, #social-link-list {
