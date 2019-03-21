@@ -1,13 +1,8 @@
-* {
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-}
-
 body, html {
     height: 100%;
-    width: 100%;
-    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -16,11 +11,13 @@ body {
 
 #nav-container {
     display: flex;
+    justify-content: space-around;
     border: 3px solid mistyrose;
 }
 
 #nav-link-list, #social-link-list {
     list-style: none;
+    display: flex;
 }
 
 #nav-link-list li, #social-link-list li {
