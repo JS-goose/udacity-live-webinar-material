@@ -6,7 +6,8 @@ body {
   height: 100%;
 }
 
-body {
+.wrapper {
+  height: 100%;
   display: flex;
   background-color: lightblue;
   padding: 10px;
