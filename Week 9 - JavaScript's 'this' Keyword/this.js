@@ -1,18 +1,17 @@
 // 'use strict'
 function Obj() {
-  (this.ham = "yes"),
-    (this.bacon = "yes"),
-    (this.legs = "4"),
+  (this.ham = 'yes'),
+    (this.bacon = 'yes'),
+    (this.legs = '4'),
     (this.makeNoise = function() {
-      this.bacon = "please";
-      console.log("oink!");
+      this.bacon = 'please';
+      console.log('oink!');
     });
 }
-const one = { one: "one" };
 const testObj = new Obj();
 
 function pigNoise() {
-  this.b = "foo";
+  this.b = 'foo';
 }
 pigNoise.bind(this)();
 
@@ -24,9 +23,22 @@ function thisFunction() {
 
 console.log(thisFunction() === window);
 
-//Arrow Functions
+
+//this inside of an object
+const oneObj = {
+  one: 'two',
+  three: function() {
+    console.log(this);
+  },
+};
+
+oneObj.three();
+
+
+
+// this inside of Arrow Functions
 const globalObject = this;
-const foo = () => this;
+let foo = () => this;
 console.log(foo() === globalObject);
 
 // Call as a method of an object
