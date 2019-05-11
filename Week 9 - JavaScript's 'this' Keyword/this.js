@@ -25,12 +25,12 @@ function thisFunction() {
 console.log(thisFunction() === window);
 
 //Arrow Functions
-var globalObject = this;
-var foo = () => this;
+const globalObject = this;
+const foo = () => this;
 console.log(foo() === globalObject);
 
 // Call as a method of an object
-var obj = { func: foo };
+const obj = { func: foo };
 console.log(obj.func() === globalObject); // true
 
 // Attempt to set this using call
