@@ -2,20 +2,86 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
-    </body>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Udacity Week 14 FEND - Mapbox API</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js"></script>
+    <link href="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css" rel="stylesheet" />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        /* border: 5px solid black; */
+      }
+
+      .css-icon {
+        width: 0;
+        height: 0;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+        border-left: 30px solid #fff;
+
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div id="map"></div>
+
+    <script>
+      L.mapbox.accessToken =
+        'pk.eyJ1Ijoiampnb29zZSIsImEiOiJjamxxaDY2N3cwcXI2M3dudnNwZGlxNmExIn0.-82PAfd6HuZsaeVY9mfHOA';
+      var map = L.mapbox
+        .map('map')
+        .setView([29.4241219, -98.4936282], 12)
+        .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+
+      // Define an icon called cssIcon
+      var cssIcon = L.divIcon({
+        // Specify a class name we can refer to in CSS.
+        className: 'css-icon',
+        // Set marker width and height
+        iconSize: [40, 40],
+      });
+
+      // Create three markers and set their icons to cssIcon
+      L.marker([26.221712, -98.218896], { icon: cssIcon }).addTo(map);
+      L.marker([25, -10], { icon: cssIcon }).addTo(map);
+      L.marker([-45, -45], { icon: cssIcon }).addTo(map);
+
+      L.control
+        .layers(
+          {
+            'Mapbox Streets': L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11').addTo(map),
+            'Mapbox Light': L.mapbox.styleLayer('mapbox://styles/mapbox/light-v10'),
+          },
+          {
+            'Bike Stations': L.mapbox.tileLayer('examples.bike-locations'),
+            'Bike Lanes': L.mapbox.tileLayer('examples.bike-lanes'),
+          }
+        )
+        .addTo(map);
+    </script>
+
+    <script src="" async defer></script>
+  </body>
 </html>
